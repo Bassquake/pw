@@ -1,0 +1,465 @@
+<!doctype html><html lang="en-GB">
+<head><meta charset="UTF-8">
+<title>Password Generator</title>
+<meta name="robots" content="noindex" />
+<meta name="robots" content="nofollow" />
+<meta name="robots" content="noarchive" />
+<meta name="robots" content="noodp" />
+<meta name="googlebot" content="index" />
+<meta name="Description" content="A free tool that creates highly secure passwords that are difficult to crack or guess.">
+<meta name="Keywords" content="password, passwords, generator">
+<!-- No cache -->
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="refresh" content="60" />
+
+<!-- Icons -->
+<link rel="icon" sizes="16x16" type="image/png" href="images/favicon.png" />
+<link rel="icon" sizes="32x32" type="image/png" href="images/favicon-32.png" />
+<link rel="icon" sizes="96x96" type="image/png" href="images/favicon-96.png" />
+<link rel="icon" sizes="192x192" type="image/png" href="images/favicon-192.png" />
+<!--<link rel="icon" sizes="196x196" type="image/png" href="images/favicon-196.png" />-->
+<link rel="icon" type="image/gif" href="images/favicon.gif" />
+
+<link rel="icon" sizes="160x160" type="images/png" href="images/speeddial-160px.png" />
+
+<link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144-precomposed.png" />
+
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114-precomposed.png" />
+
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72-precomposed.png" />
+
+<link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57-precomposed.png" />
+
+<link rel="apple-touch-icon" sizes="60x60" href="images/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+
+<!--[if IE]><link rel="shortcut icon" href="images/favicon-32.ico"><![endif]-->
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+<meta name="application-name" content="Password Generator" />
+<meta name="msapplication-TileColor" content="#3c3c3b" />
+<meta name="msapplication-TileImage" content="images/square-144.png" />
+<meta name="msapplication-square150x150logo" content="images/square.png" />
+
+<link rel="mask-icon" href="images/pwmask.svg" color="#27aee1">
+
+<meta name="apple-mobile-web-app-title" content="Password Generator">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#3c3c3b" />
+
+<meta name="msapplication-config" content="browserconfig.xml" />
+
+<!-- Build Sept 2016 -->
+<!-- Aug 2016 Turned off AutoCapitalise for iOS -->
+
+<style type="text/css">
+div#wrapper {
+	text-align: center;
+}
+div#custom_wrapper {
+	border:1px solid #ccc;
+	padding:20px;
+	margin:8px 0 16px 0;
+}
+hr {
+	border:none;
+	border-bottom: 1px solid #ccc;
+	margin: 8px 0;
+}
+/** {border: 1px solid #ff00ff;}*/
+h1 {
+	text-align: center;
+}
+p, h1, h2, li, label, input, .masterbox {
+	font-family: Helvetica, Arial, Verdana, Geneva, sans-serif;
+	font-weight: normal;
+	font-size: 100%;
+}
+h1{
+	clear: both;
+	font-size :140%;
+}
+body{
+	font-weight: normal;
+	color: #000;
+	background-color: #eee;
+	margin: 20px;
+}
+form{
+	left: 40px;
+	margin: 0;
+}
+label{
+	width: 120px;
+	margin-right: 5px;
+	display: inline-block;
+	text-align: right;
+	vertical-align: middle;
+}
+li{
+	margin: 15px 0;
+}
+.masterbox {
+	width: 204px;
+}
+.sitebox {
+	width: 90px;
+}
+.pass {
+	width: 110px;
+}
+.tagline {
+	font-size: 12px;
+}
+#showlbl{
+	clear:both;
+	text-align: left;
+	float:none;
+	width: 200px;
+	display:inline;
+	cursor: pointer;
+}
+a:link{
+	color: #00F;
+	text-decoration: none;
+}
+a:visited{
+	color: #00F;
+	text-decoration: none;
+}
+a:visited:hover{
+	color: #00F;
+	text-decoration: underline;
+}
+a:hover{
+	color: #00F;
+	text-decoration: underline;
+}
+a:active{
+	color: #00F;
+}
+input {
+	-webkit-appearance:none;
+	border: none;
+	padding: 10px;
+	background-color: #fff;
+	vertical-align: middle;
+}
+.squaredThree {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	position: relative;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+.squaredThree label {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: -webkit-linear-gradient(top, #fff 0%, #fff 100%);
+	background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.4);
+}
+.squaredThree label:after {
+	content: '';
+	width: 9px;
+	height: 5px;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	border: 3px solid #999;
+	border-top: none;
+	border-right: none;
+	background: transparent;
+	opacity: 0;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.squaredThree label:hover::after {
+	opacity: 0.3;
+}
+.squaredThree input[type=checkbox] {
+	visibility: hidden;
+}
+.squaredThree input[type=checkbox]:checked + label:after {
+	opacity: 1;
+}
+input[type="submit"],
+input[type="button"] {
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	background: #27aee1;
+	color: #fff;
+	font-size: 100%;
+	cursor: pointer;
+}
+input.clearall {
+	background: #999;
+}
+input.pass {
+	cursor: text;
+}
+/* WHEN SCREEN IS SMALLER THAN 360 */
+@media screen and (max-width: 360px) {
+div#custom_wrapper {
+	padding:5px 20px 20px 20px;
+}
+input {
+	display: block;
+	margin-top: 5px;
+	box-sizing: border-box;
+}
+.sitebox, .pass {
+	width: 100%;
+	left: 0;
+}
+label {
+	margin-right: 0;
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+input[type="submit"],
+input[type="button"] {
+	width: 100%;
+}
+.masterbox {
+	width: 100%;
+	display:block;		
+}
+input[type="checkbox"] {
+	display: inline;
+}
+.generate_main {
+	margin-bottom: 10px;
+}
+}
+</style>
+
+<script type="text/javascript">
+
+/*
+ * The sites to display.
+ * You can edit this to customise the page,
+ * to include an extra website just add an extra line:
+ */
+
+var sites = [
+   {seed:"amazon", url:"https://www.amazon.co.uk/", displayName:"Amazon"}
+  ,{seed:"apple", url:"https://www.apple.com/uk/", displayName:"Apple"}
+  ,{seed:"ebay", url:"https://signin.ebay.co.uk/", displayName:"Ebay"}
+  ,{seed:"gumtree", url:"https://www.gumtree.com/", displayName:"Gumtree"}
+  ,{seed:"facebook", url:"https://www.facebook.com/", displayName:"Facebook"}
+  ,{seed:"google", url:"https://www.google.co.uk/", displayName:"Google"}
+  ,{seed:"halifax", url:"https://www.halifax.co.uk/", displayName:"Halifax"}
+  ,{seed:"premiumbonds", url:"https://www.nsandi.com/premium-bonds/", displayName:"Premium Bonds"}
+  ,{seed:"linkedin", url:"https://www.linkedin.com/", displayName:"LinkedIn"}
+  ,{seed:"paypal", url:"https://www.paypal.com/uk/home/", displayName:"PayPal"}
+  ,{seed:"virtualcabinetportal", url:"https://www.virtualcabinetportal.com/", displayName:"Virtual Cabinet Portal"}
+  ,{seed:"adviceuneed", url:"https://www.hotmail.com/", displayName:"@adviceuneed"}
+  ,{seed:"bassquake33", url:"https://www.hotmail.com/", displayName:"@bassquake33"}
+  ,{seed:"billiamski", url:"https://www.hotmail.com/", displayName:"@billiamski"}
+  ,{seed:"billy.blair", url:"https://www.gmail.com/", displayName:"@billy.blair"}
+];
+
+//<![CDATA[
+/*
+ * A JavaScript implementation of the Secure Hash Algorithm, SHA-1, as defined
+ * in FIPS PUB 180-1
+ * Version 2.1 Copyright Paul Johnston 2000 - 2002.
+ * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
+ * Distributed under the BSD License
+ * See http://pajhome.org.uk/crypt/md5 for details.
+ */
+var b64pad  = "";
+var chrsz   = 8;
+
+function b64_sha1(s){return binb2b64(core_sha1(str2binb(s),s.length * chrsz));}
+
+function core_sha1(x, len)
+{
+  x[len >> 5] |= 0x80 << (24 - len % 32);
+  x[((len + 64 >> 9) << 4) + 15] = len;
+
+  var w = Array(80);
+  var a =  1732584193;
+  var b = -271733879;
+  var c = -1732584194;
+  var d =  271733878;
+  var e = -1009589776;
+
+  for(var i = 0; i < x.length; i += 16)
+  {
+	var olda = a;
+	var oldb = b;
+	var oldc = c;
+	var oldd = d;
+	var olde = e;
+
+	for(var j = 0; j < 80; j++)
+	{
+	  if(j < 16) w[j] = x[i + j];
+	  else w[j] = rol(w[j-3] ^ w[j-8] ^ w[j-14] ^ w[j-16], 1);
+	  var t = safe_add(safe_add(rol(a, 5), sha1_ft(j, b, c, d)), 
+					   safe_add(safe_add(e, w[j]), sha1_kt(j)));
+	  e = d;
+	  d = c;
+	  c = rol(b, 30);
+	  b = a;
+	  a = t;
+	}
+
+	a = safe_add(a, olda);
+	b = safe_add(b, oldb);
+	c = safe_add(c, oldc);
+	d = safe_add(d, oldd);
+	e = safe_add(e, olde);
+  }
+  return Array(a, b, c, d, e);
+
+}
+
+function sha1_ft(t, b, c, d)
+{
+  if(t < 20) return (b & c) | ((~b) & d);
+  if(t < 40) return b ^ c ^ d;
+  if(t < 60) return (b & c) | (b & d) | (c & d);
+  return b ^ c ^ d;
+}
+
+function sha1_kt(t)
+{
+  return (t < 20) ?  1518500249 : (t < 40) ?  1859775393 :
+		 (t < 60) ? -1894007588 : -899497514;
+}  
+
+function safe_add(x, y)
+{
+  var lsw = (x & 0xFFFF) + (y & 0xFFFF);
+  var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+  return (msw << 16) | (lsw & 0xFFFF);
+}
+
+function rol(num, cnt)
+{
+  return (num << cnt) | (num >>> (32 - cnt));
+}
+
+function str2binb(str)
+{
+  var bin = Array();
+  var mask = (1 << chrsz) - 1;
+  for(var i = 0; i < str.length * chrsz; i += chrsz)
+	bin[i>>5] |= (str.charCodeAt(i / chrsz) & mask) << (24 - i%32);
+  return bin;
+}
+
+function binb2b64(binarray)
+{
+  var tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+  var str = "";
+  for(var i = 0; i < binarray.length * 4; i += 3)
+  {
+	var triplet = (((binarray[i   >> 2] >> 8 * (3 -  i   %4)) & 0xFF) << 16)
+				| (((binarray[i+1 >> 2] >> 8 * (3 - (i+1)%4)) & 0xFF) << 8 )
+				|  ((binarray[i+2 >> 2] >> 8 * (3 - (i+2)%4)) & 0xFF);
+	for(var j = 0; j < 4; j++)
+	{
+	  if(i * 8 + j * 6 > binarray.length * 32) str += b64pad;
+	  else str += tab.charAt((triplet >> 6*(3-j)) & 0x3F);
+	}
+  }
+  return str;
+}		
+
+function setvals() {
+	var mypass = document.getElementById("main");
+
+	document.getElementById("customRoot").setAttribute('value', mypass.value);
+
+/*     	   Seed    masterpassword */
+  for (var i = 0; i < sites.length; i++) {
+    passwordHash(sites[i].seed, mypass);
+  }
+}
+
+function highlight(field) {
+       field.focus();
+       field.select();
+}
+function passwordHash(passbox,master) {
+	var newpass = b64_sha1(master.value +':'+ passbox);
+	newpass = newpass.substr(0,8) + '1a';
+	if(master.value.length==0 || master.value==null){
+		newpass = '';
+		}
+	document.getElementById(passbox).setAttribute('value', newpass);
+}
+function revealPassword(reveal) {
+    if(reveal) {
+        document.getElementById('main').style.display = 'none';
+        document.getElementById('maintext').style.display = 'inline';
+    } else {
+        document.getElementById('maintext').style.display = 'none';
+        document.getElementById('main').style.display = 'inline';
+    }
+}
+function copyTo(source, destination) {
+    document.m[destination].value = source.value;
+}
+window.onbeforeunload = function () {
+   // This function stops the page being cached (so the back button won't reveal passwords).
+}
+// ]]>
+</script>
+
+</head>
+<body onLoad="document.m.reset();document.ot.reset();document.m.main.focus();">
+<div id="wrapper">
+<h1>SS64 Password Generator</h1>
+<form name="m" id="m">
+<div id="mp">
+	<h2>Master password</h2>
+<p><input name="main" id="main" class="masterbox" value="" autocomplete="off" autocapitalize="none" onBlur="setvals();" onKeyUp="copyTo(this, 'maintext');" type="password" maxlength="10" placeholder="Type password..." />
+<input name="maintext" id="maintext" class="masterbox" value="" autocomplete="off" autocapitalize="none" onBlur="setvals();" onKeyUp="copyTo(this, 'main');" style="display: none;" maxlength="10" />
+<input value="Generate" onClick="setvals();" type="button" class="generate_main" /> <span class="squaredThree">
+      <input type="checkbox" id="squaredThree" name="reveal" onClick="revealPassword(this.checked);" />
+      <label for="squaredThree"></label>
+    </span><!--input name="reveal" onClick="revealPassword(this.checked);" type="checkbox" id="show"--> 
+<label id="showlbl" for="squaredThree">Show password</label></p></div>
+</form><form method="post">
+<script type="text/javascript">
+for (var i = 0; i < sites.length; i++) {
+  document.write("<hr/><label><a href=\"" + sites[i].url + "\" target=\"_blank\">" + sites[i].displayName + "</a></label>");
+  //document.writeln(" <input name=\"site\" class=\"sitebox\" value=\"" + sites[i].seed + "\" readonly=\"\">");
+  document.writeln("<input name=\"password\" id=\"" + sites[i].seed + "\" class=\"pass\" readonly=\"\" onclick=\"highlight(this);\" value=\"\" placeholder=\"" + sites[i].seed + "\">");
+}
+</script>
+</form>
+<!--custom-->
+<form method="post" name="ot" class="callout" id="ot" onSubmit="setvals();otpassword.value = b64_sha1(customRoot.value+':'+ CustomSite.value).substr(0,8) + '1a'; if(customRoot.value.length==0 || customRoot.value==null){otpassword.value = ''}; document.ot.otpassword.focus(); document.ot.otpassword.select(); return false;">
+<input name="passwd" id="customRoot" type="hidden">
+<div id="custom_wrapper">
+<label>Custom: </label> 
+<input name="CustomSite" class="sitebox"  autocapitalize="none" onKeyUp="otpassword.value = '';" maxlength="10" placeholder="Site name..." />
+<input name="otpassword" id="otpass" class="pass" readonly onclick="highlight(this);" placeholder="Password..." />
+<input type="submit" value="Generate" />
+</div>
+<input class="clearall" type="button" value="Clear All" onClick="window.location.href=window.location.href" />
+</form>
+<p class="tagline"><a href="http://ss64.com/" target="_blank">ss64.com</a></p>
+</div>
+</body></html>

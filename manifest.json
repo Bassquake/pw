@@ -1,0 +1,40 @@
+{
+  "short_name": "PW",
+  "name": "Password Generator",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#3c3c3b",
+  "icons": [
+    {
+      "src": "images/favicon-48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "images/favicon-96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "images/favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },  
+    {  
+      "src": "images/favicon-256.png",  
+      "sizes": "256x256",  
+      "type": "image/png"  
+    },  
+    {  
+      "src": "images/favicon-384.png",  
+      "sizes": "384x384",  
+      "type": "image/png"  
+    },  
+    {  
+      "src": "images/favicon-512.png",  
+      "sizes": "512x512",  
+      "type": "image/png"  
+    }
+  ],
+  "start_url": "index.html"  
+}
